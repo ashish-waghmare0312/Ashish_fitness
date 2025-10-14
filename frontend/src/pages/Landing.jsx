@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
 import { Check, ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import TestimonialCard from "@/components/marketing/TestimonialCard";
 
 function Section({ id, children, className = "" }) {
   return (
@@ -130,18 +131,13 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* Testimonials */}
+      {/* Testimonials - new card style like the sample, without PFP */}
       <Section id="testimonials">
         <div className="mx-auto max-w-5xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-heading">{siteContent.testimonials.title}</h2>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {siteContent.testimonials.items.map((t, idx) => (
-              <Card key={idx} className="border af-border bg-white">
-                <CardContent className="pt-6">
-                  <div className="text-sm text-heading">{t.author}</div>
-                  <p className="mt-3 leading-relaxed text-body"><span className="hero-highlight">{t.text}</span></p>
-                </CardContent>
-              </Card>
+              <TestimonialCard key={idx} author={t.author} text={t.text} />
             ))}
           </div>
         </div>
