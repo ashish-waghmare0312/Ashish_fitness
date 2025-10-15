@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { useNavigate } from "react-router-dom";
 import "@/styles/marketing.css";
+import { siteContent } from "@/mock/mock";
 
 const navItems = [
   { label: "Coaching", href: "#coaching" },
@@ -14,12 +15,6 @@ const navItems = [
 
 export default function SiteHeader() {
   const navigate = useNavigate();
-  const onContact = () => {
-    navigate("/");
-    setTimeout(() => {
-      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 75);
-  };
   return (
     <header className="sticky top-0 z-50 border-b af-border" style={{background: "#FFFFFF"}}>
       <div className="sticky-header">
@@ -40,8 +35,8 @@ export default function SiteHeader() {
             </NavigationMenu>
           </nav>
           <div className="flex items-center gap-2">
-            <Button className="btn-transition rounded-full af-btn-primary" onClick={onContact}>
-              Get In Touch
+            <Button className="btn-transition rounded-full af-btn-primary" asChild>
+              <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer">Get In Touch</a>
             </Button>
           </div>
         </div>

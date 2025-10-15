@@ -3,6 +3,7 @@ export const siteContent = {
     name: "Ashish Fitness",
     logoText: "ashish fitness",
     phone: "+919920926651",
+    calendly: "https://calendly.com/ashishfitnesscoaching",
   },
   hero: {
     headline: "Science-Backed Fitness & Nutrition for Students",
@@ -12,9 +13,9 @@ export const siteContent = {
     coach: {
       name: "Ashish",
       title: "Student Fitness Coach",
-      // Subtle placeholder photo
+      // Coach photo provided by user
       photo:
-        "https://images.unsplash.com/photo-1571907480495-0b4d1f3f1e7b?q=80&w=400&auto=format&fit=crop",
+        "https://customer-assets.emergentagent.com/job_student-fitness-3/artifacts/oq41ur66_Ashish_Waghmare.jpg",
     },
   },
   about: {
