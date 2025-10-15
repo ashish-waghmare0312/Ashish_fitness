@@ -95,16 +95,13 @@ export const siteContent = {
   faq: {
     title: "FAQ",
     items: [
-      {
-        q: "How do check-ins work?",
-        a: "Weekly for Starter/Group; daily messages + weekly calls for Premium.",
-      },
-      { q: "Do I need a gym?", a: "No. I’ll tailor home or gym plans based on your access." },
-      {
-        q: "Is this only for students?",
-        a: "Students first, but professionals are welcome if schedules align.",
-      },
-      { q: "Refunds?", a: "Pause anytime. 7-day refund window for new clients." },
+      { q: "How can I start coaching with you?", a: "Just click the WhatsApp button or fill out the form below. I’ll reply personally, and we’ll choose the right plan for you." },
+      { q: "Do I need to pay in advance?", a: "Yes, payment is made before your plan begins. Once confirmed, your personalized plan starts within 24 hours." },
+      { q: "How will I receive my workout and diet plan?", a: "You’ll get everything digitally through WhatsApp or Google Drive—easy to access on your phone anytime." },
+      { q: "What if I’m a beginner or have never gone to the gym?", a: "No problem. Every plan starts from your current level. You’ll get clear instructions and simple routines to build consistency first." },
+      { q: "Can I change my plan later?", a: "Yes, you can upgrade or switch plans anytime. Just text me and we’ll adjust it based on your progress and schedule." },
+      { q: "Do you offer nutrition guidance too?", a: "Yes, all plans include nutrition support—customized based on your college lifestyle, preferences, and budget." },
+      { q: "What’s the best way to contact you?", a: "WhatsApp is fastest. You can also reach me through the contact form on the site for coaching or other questions." },
     ],
   },
   contact: {

@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
 import { Check, ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import TestimonialCard from "@/components/marketing/TestimonialCard";
+import ProcessCards from "@/components/marketing/ProcessCards";
 
 function Section({ id, children, className = "" }) {
   return (
@@ -131,7 +132,15 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* Testimonials - new card style like the sample, without PFP */}
+      {/* Process - new dark blurred cards */}
+      <Section id="process">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-heading mb-8">Process</h2>
+          <ProcessCards />
+        </div>
+      </Section>
+
+      {/* Testimonials - card style */}
       <Section id="testimonials">
         <div className="mx-auto max-w-5xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-heading">{siteContent.testimonials.title}</h2>
@@ -155,27 +164,6 @@ export default function Landing() {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-      </Section>
-
-      {/* Process */}
-      <Section id="process">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-heading">Process</h2>
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {["Assess", "Plan", "Execute"].map((step, i) => (
-              <Card key={step} className="bg-white border af-border">
-                <CardHeader>
-                  <CardTitle className="text-heading">{i + 1}. {step}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-body">
-                  {step === "Assess" && "Quick audit of schedule, goals, and training access."}
-                  {step === "Plan" && "Personalized workouts + nutrition with milestones."}
-                  {step === "Execute" && "Weekly reviews, daily nudges (Premium), iterate."}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </Section>
 
