@@ -11,40 +11,37 @@ function parseAuthor(author) {
   return { name: author, role: null };
 }
 
-function highlightRelevant(text) {
-  const tokens = text.split(/(\s+)/);
-  const numberKg = /^(?:\d+(?:\.\d+)?)\s?(?:kg|kgs)$/i;
-  const numbers = /^(?:\d{1,2}(?:\.\d+)?|\d{4})$/;
-  const timeWords = /^(?:week|weeks|month|months|days?)$/i;
-  const verbs = /^(dropped|lost|gain(?:ed)?|increased|recomposition|progress|strength)$/i;
-  const connectors = /^(from|to)$/i;
-
-  const out = [];
-  for (let i = 0; i < tokens.length; i++) {
-    const t = tokens[i];
-    if (t.trim() === "") { out.push(t); continue; }
-    const next = tokens[i + 2] || ""; // skip whitespace in between
-    const pair = `${t}${next}`.trim();
-
-    // Composite like "5 kgs"
-    if (/^\d+(?:\.\d+)?$/.test(t) && /^(kg|kgs|months?|weeks?)$/i.test(next)) {
-      out.push(<mark key={i} className="af-mark">{t} {next}</mark>);
-      i += 2; // skip number, space, unit
-      continue;
-    }
-
-    // Single token highlights
-    if (numberKg.test(t) || timeWords.test(t) || verbs.test(t) || connectors.test(t) || numbers.test(t)) {
-      out.push(<mark key={i} className="af-mark">{t}</mark>);
-      continue;
-    }
-
-    out.push(<span key={i}>{t}</span>);
-  }
-  return out;
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-export default function TestimonialCard({ author, text }) {
+function highlightRelevant(text, highlights = []) {
+  if (!Array.isArray(highlights) || highlights.length === 0) {
+    return text;
+  }
+
+  const cleaned = highlights
+    .map((phrase) => (typeof phrase === "string" ? phrase.trim() : ""))
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length);
+
+  if (cleaned.length === 0) {
+    return text;
+  }
+
+  const pattern = new RegExp(`(${cleaned.map(escapeRegExp).join("|")})`, "gi");
+  const parts = text.split(pattern);
+
+  return parts.map((part, idx) => {
+    const matched = cleaned.find((phrase) => phrase.toLowerCase() === part.toLowerCase());
+    if (matched) {
+      return <mark key={`mark-${idx}`} className="af-mark">{part}</mark>;
+    }
+    return <span key={`span-${idx}`}>{part}</span>;
+  });
+}
+
+export default function TestimonialCard({ author, text, highlights }) {
   const { name, role } = parseAuthor(author);
   return (
     <Card className="border af-border bg-white">
@@ -54,7 +51,7 @@ export default function TestimonialCard({ author, text }) {
           <BadgeCheck size={18} style={{color: "#3949AB"}} aria-hidden />
         </div>
         {role && <div className="text-sm" style={{color: "#757575"}}>{role}</div>}
-        <p className="mt-3 leading-relaxed text-body">{highlightRelevant(text)}</p>
+        <p className="mt-3 leading-relaxed text-body">{highlightRelevant(text, highlights)}</p>
       </CardContent>
     </Card>
   );
