@@ -209,7 +209,7 @@
 /* Text reveal animations */
 .af-animate {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(14px);
   animation: afFadeUp 0.8s ease forwards;
 }
 

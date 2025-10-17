@@ -58,7 +58,7 @@ export default function Landing() {
                 onMouseLeave={() => setHeroHover(false)}
                 asChild
               >
-                <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" title={heroHover ? "Let's Go!" : siteContent.hero.cta}>
+                <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" aria-label="Schedule a meeting on Calendly">
                   <span className="hero-cta-inner">
                     <span className="hero-cta-text hero-cta-text-animate" key={heroHover ? 'hover' : 'default'}>
                       {heroHover ? "Let's Go!" : siteContent.hero.cta}

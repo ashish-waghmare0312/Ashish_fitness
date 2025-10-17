@@ -81,7 +81,6 @@ export const siteContent = {
         text:
           "I started my lean bulking phase at 50 kgs and, in just 2.5 months, I'm up to 52.8 kgs! That's a solid 2.8 kg gain in total, with no excess fat. The results are amazing—I've seen major improvements in strength in the gym, too. The real benefit of Ashish's coaching is the accountability; he pushes me to eat enough and provides strategic advice, like when to increase my calories, which is why I haven't hit a plateau. The guidance has definitely helped!”",
         highlights: [
-          
           "The results are amazing—I've seen major improvements in strength",
         ],
       },
@@ -106,7 +105,7 @@ export const siteContent = {
         text:
           "I upgraded my chest fly to 30 kg and hit 40 kg barbell bench press for 5 reps today. Never thought I’d be lifting like this at 16. The progress has been steady and feels solid every week.”",
         highlights: [
-          " Never thought I’d be lifting like this at 16",
+          "Never thought I’d be lifting like this at 16",
         ],
       },
       {
