@@ -1,7 +1,7 @@
 export const siteContent = {
   brand: {
-    name: "Ashish Fitness",
-    logoText: "ashish fitness",
+    name: "Ashish Waghmare",
+    logoText: "ashish waghmare",
     phone: "+919920926651",
     calendly: "https://calendly.com/ashishfitnesscoaching",
   },
@@ -21,11 +21,17 @@ export const siteContent = {
   about: {
     title: "About Ashish",
     body:
-      "Hi, I’m Ashish. I coach students with simple, science-backed workouts and meal plans that fit your busy schedule. No fads. No overcomplicated diets. Just real results.",
-    
+      "Hi, I'm Ashish. I coach students with simple, science-backed workouts and meal plans that fit your busy schedule. No fads. No overcomplicated diets. Just real results.",
+    highlight: "Certified Fitness & Nutrition Coach",
+    credentials: [
+      
+      "Trained under NASM-CNC",
+      "Pursuing Nutrition Coaching Certification",
+      "Specialized in student fitness & lifestyle",
+    ],
   },
   coaching: {
-    title: "Coaching",
+    title: "Choose Your Perfect Coaching Plan",
     cta: "Join Now",
     ctaHover: "Start now",
     packages: [
@@ -55,7 +61,7 @@ export const siteContent = {
     ],
   },
   testimonials: {
-    title: "Student results",
+    title: "Proven Results from Real People",
     items: [
       {
         author: "Ayush (Student)",
@@ -122,7 +128,7 @@ export const siteContent = {
     ],
   },
   faq: {
-    title: "FAQ",
+    title: "Got Questions? We've Got Answers",
     items: [
       { q: "How can I start coaching with you?", a: "Just click the WhatsApp button or fill out the form below. I’ll reply personally, and we’ll choose the right plan for you." },
       { q: "Do I need to pay in advance?", a: "Yes, payment is made before your plan begins. Once confirmed, your personalized plan starts within 24 hours." },

@@ -24,9 +24,8 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="site-header__brand" href="#hero" aria-label="Ashish Fitness home">
-          <div className="site-header__mark" aria-hidden />
-          <span>ashish fitness</span>
+        <a className="site-header__brand" href="#hero" aria-label="Ashish Waghmare home">
+          <span>ashish waghmare</span>
         </a>
         <button
           type="button"

@@ -52,7 +52,8 @@ export default function PillarsSection() {
   return (
     <section id="pillars">
       <div className="mx-auto max-w-5xl px-6 md:px-8 py-20">
-        <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading">Evidence‑Based Coaching Pillars</h2>
+        <h2 className="af-animate text-3xl md:text-4xl lg:text-5xl font-bold text-center text-heading mb-2">Evidence‑Based Coaching Pillars</h2>
+        <p className="af-animate af-animate-delay-sm text-center text-body/70 mb-12 text-sm md:text-base">Seven core principles that drive real, sustainable results</p>
         <div className="af-animate af-animate-delay-sm mt-8 af-bento-grid">
           {PILLARS.map((item, index) => {
             const IconComponent = item.icon;
