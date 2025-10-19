@@ -6,14 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import { Check, ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { Check, ArrowRight, MessageCircle, Dumbbell } from "lucide-react";
 import TestimonialCard from "@/components/marketing/TestimonialCard";
+import TimelineDemo from "@/components/timelinedemo";
+import PillarsSection from "@/components/marketing/PillarsSection";
 
-function Section({ id, children, className = "" }) {
+function Section({ id, children, className = "", padded = true, ...rest }) {
+  const classes = [padded ? "py-24 md:py-32" : "", className].filter(Boolean).join(" ");
   return (
-    <section id={id} className={`py-16 md:py-24 ${className}`}>{children}</section>
+    <section id={id} className={classes} {...rest}>{children}</section>
   );
 }
 
@@ -42,74 +44,80 @@ export default function Landing() {
   return (
     <div className="marketing">
       {/* Hero */}
-      <Section id="hero" className="dotted-bg">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-heading">
-                {siteContent.hero.headline}
-              </h1>
-              <p className="mt-4 text-lg text-body">
-                {siteContent.hero.subheadline}
-              </p>
-              <div className="mt-8 flex items-center gap-3">
-                <Button
-                  className="btn-transition rounded-full af-btn-primary px-6 h-11"
-                  onMouseEnter={() => setHeroHover(true)}
-                  onMouseLeave={() => setHeroHover(false)}
-                  asChild
-                >
-                  <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" title={heroHover ? "Let's Go!" : siteContent.hero.cta}>
-                    <span className="inline-flex items-center gap-2" style={{color: "#1A237E"}}>
+      <Section id="hero" padded={false} className="pt-28 pb-20 md:pt-36 md:pb-28">
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <div className="flex flex-col items-center text-center gap-4 md:gap-8">
+            <h1 className="af-animate text-6xl md:text-[5.25rem] font-serif leading-tight tracking-tight text-heading">
+              {siteContent.hero.headline}
+            </h1>
+            <p className="af-animate af-animate-delay-sm text-lg md:text-xl text-body max-w-3xl leading-relaxed">
+              {siteContent.hero.subheadline}
+            </p>
+            <div className="af-animate af-animate-delay-md flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                className="btn-transition rounded-full af-btn-primary px-6 h-11"
+                onMouseEnter={() => setHeroHover(true)}
+                onMouseLeave={() => setHeroHover(false)}
+                asChild
+              >
+                <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" aria-label="Schedule a meeting on Calendly">
+                  <span className="hero-cta-inner">
+                    <span className="hero-cta-text hero-cta-text-animate" key={heroHover ? 'hover' : 'default'}>
                       {heroHover ? "Let's Go!" : siteContent.hero.cta}
-                      <ArrowRight className="h-4 w-4" />
                     </span>
-                  </a>
-                </Button>
-                <a href={waLink} target="_blank" rel="noreferrer" className="text-sm af-link">Chat on WhatsApp</a>
-              </div>
-            </div>
-            <div className="relative">
-              <Card className="glass p-6 border af-border">
-                <div className="flex items-center gap-4">
-                  <Avatar className="h-16 w-16 float-up">
-                    <AvatarImage src={siteContent.hero.coach.photo} alt="Coach Ashish" />
-                    <AvatarFallback>AF</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="text-sm text-secondary">Hi, I'm</div>
-                    <div className="text-xl font-bold text-heading">{siteContent.hero.coach.name}</div>
-                    <div className="text-sm text-secondary">{siteContent.hero.coach.title}</div>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-body">Simple, science-backed coaching built for busy students. No fads. Just results.</p>
-                <div className="mt-4 flex gap-2">
-                  <div className="px-2 py-1 text-xs rounded-full af-highlight-bg border af-border-accent flex items-center gap-1"><Sparkles className="h-3 w-3"/> Evidence-based</div>
-                  <div className="px-2 py-1 text-xs rounded-full af-highlight-bg border af-border-accent">Accountability</div>
-                </div>
-              </Card>
+                    {heroHover ? (
+                      <Dumbbell className="hero-cta-icon" aria-hidden />
+                    ) : (
+                      <ArrowRight className="hero-cta-icon" aria-hidden />
+                    )}
+                  </span>
+                </a>
+              </Button>
+              <a href={waLink} target="_blank" rel="noreferrer" className="text-sm af-link">Chat on WhatsApp</a>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* About */}
-      <Section id="about">
-        <div className="mx-auto max-w-3xl px-4 text-center md:text-left">
-          <h2 className="text-2xl md:text-3xl font-bold text-heading">{siteContent.about.title}</h2>
-          <p className="mt-4 leading-relaxed text-body">{siteContent.about.body}</p>
+      {/* Know the Coach - unboxed */}
+      <Section id="about" padded>
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 items-center">
+            <div className="order-2 md:order-1 about-photo-wrapper">
+              <div className="hidden md:block absolute -top-8 -left-8 w-24 h-24 rounded-full af-highlight-bg blur-xl opacity-70" aria-hidden />
+              <div className="hidden md:block absolute -bottom-10 -right-8 w-20 h-20 rounded-full af-highlight-bg blur-lg opacity-60" aria-hidden />
+              <div className="about-photo">
+                <img
+                  src="/Ashish_Waghmare.jpg"
+                  alt="Ashish Waghmare, student fitness coach"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="order-1 md:order-2 text-center md:text-left space-y-4">
+              <h2 className="af-animate text-2xl md:text-3xl font-bold text-heading">Know The Coach</h2>
+              <p className="af-animate af-animate-delay-sm leading-relaxed text-body text-lg md:text-base">{siteContent.about.body}</p>
+              <div className="af-animate af-animate-delay-md mt-2 flex flex-col sm:flex-row sm:items-center gap-3">
+                <div className="text-sm uppercase tracking-wider text-secondary">Coach</div>
+                <div className="hidden sm:flex about-divider" aria-hidden />
+                {siteContent.about.highlight && (
+                  <div className="text-heading font-semibold">{siteContent.about.highlight}</div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
       {/* Coaching */}
-      <Section id="coaching" className="" style={{background: "#FAFAFA"}}>
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex items-center justify-between mb-8">
+      <Section id="coaching" className="" padded>
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <div className="af-animate flex items-center justify-between mb-12 border-b border-neutral-200 pb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-heading">{siteContent.coaching.title}</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {siteContent.coaching.packages.map((pkg) => (
-              <Card key={pkg.name} className="af-card-gradient af-card-shadow border af-card-border hover:shadow-lg transition-shadow">
+            {siteContent.coaching.packages.map((pkg, idx) => (
+              <Card key={pkg.name} className={`af-animate ${idx === 1 ? "af-animate-delay-sm" : idx === 2 ? "af-animate-delay-md" : ""} af-card-gradient af-card-shadow border af-card-border hover:shadow-lg transition-shadow`}>
                 <CardHeader>
                   <CardTitle className="text-lg text-heading">{pkg.name}</CardTitle>
                 </CardHeader>
@@ -131,46 +139,39 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* Process - reverted to light cards */}
-      <Section id="process">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-heading">Process</h2>
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {["Assess", "Plan", "Execute"].map((step, i) => (
-              <Card key={step} className="bg-white border af-border">
-                <CardHeader>
-                  <CardTitle className="text-heading">{i + 1}. {step}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-body">
-                  {step === "Assess" && "Quick audit of schedule, goals, and training access."}
-                  {step === "Plan" && "Personalized workouts + nutrition with milestones."}
-                  {step === "Execute" && "Weekly reviews, daily nudges (Premium), iterate."}
-                </CardContent>
-              </Card>
-            ))}
+      <PillarsSection />
+
+      {/* Process */}
+      <Section id="process" padded>
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-12 border-b border-neutral-200 pb-6">How I help you get your dream physique</h2>
+          <div className="af-animate af-animate-delay-sm">
+            <TimelineDemo />
           </div>
         </div>
       </Section>
 
       {/* Testimonials - card style */}
-      <Section id="testimonials">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-heading">{siteContent.testimonials.title}</h2>
+      <Section id="testimonials" padded>
+        <div className="mx-auto max-w-5xl px-6 md:px-8">
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-12 border-b border-neutral-200 pb-6">{siteContent.testimonials.title}</h2>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {siteContent.testimonials.items.map((t, idx) => (
-              <TestimonialCard key={idx} author={t.author} text={t.text} />
+              <div key={idx} className={`af-animate ${idx % 2 ? "af-animate-delay-sm" : ""}`}>
+                <TestimonialCard author={t.author} text={t.text} highlights={t.highlights} />
+              </div>
             ))}
           </div>
         </div>
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" style={{background: "#FAFAFA"}}>
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-heading">{siteContent.faq.title}</h2>
+      <Section id="faq" padded>
+        <div className="mx-auto max-w-3xl px-6 md:px-8">
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-8">{siteContent.faq.title}</h2>
           <Accordion type="single" collapsible className="w-full">
             {siteContent.faq.items.map((item, idx) => (
-              <AccordionItem value={`q-${idx}`} key={idx}>
+              <AccordionItem value={`q-${idx}`} key={idx} className="af-animate">
                 <AccordionTrigger className="text-left text-heading">{item.q}</AccordionTrigger>
                 <AccordionContent className="text-body">{item.a}</AccordionContent>
               </AccordionItem>
@@ -180,14 +181,14 @@ export default function Landing() {
       </Section>
 
       {/* Contact */}
-      <Section id="contact" style={{background: "#FAFAFA"}}>
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-heading">{siteContent.contact.title}</h2>
-            <p className="mt-2 text-body">{siteContent.contact.body}</p>
+      <Section id="contact" padded>
+        <div className="mx-auto max-w-4xl px-6 md:px-8">
+          <div className="text-center space-y-3">
+            <h2 className="af-animate text-2xl md:text-3xl font-bold text-heading">{siteContent.contact.title}</h2>
+            <p className="af-animate af-animate-delay-sm text-body">{siteContent.contact.body}</p>
           </div>
           <div className="mt-8 grid md:grid-cols-3 gap-6 items-start">
-            <Card className="md:col-span-1 bg-white border af-border">
+            <Card className="af-animate md:col-span-1 bg-white border af-border">
               <CardContent className="p-6">
                 <div className="text-sm text-secondary">Direct chat</div>
                 <a href={waLink} target="_blank" rel="noreferrer">
@@ -198,7 +199,7 @@ export default function Landing() {
                 <div className="mt-4 text-xs text-muted2">WhatsApp mocked link uses your number for quick outreach.</div>
               </CardContent>
             </Card>
-            <Card className="md:col-span-2 bg-white border af-border">
+            <Card className="af-animate af-animate-delay-sm md:col-span-2 bg-white border af-border">
               <CardContent className="p-6">
                 <form onSubmit={onSubmitContact} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -228,9 +229,9 @@ export default function Landing() {
       </Section>
 
       <footer className="py-10 af-footer">
-        <div className="mx-auto max-w-6xl px-4 flex items-center justify-between text-sm">
-          <div>© {new Date().getFullYear()} Ashish Fitness. All rights reserved.</div>
-          <a className="hover:underline" href="#hero">Back to top</a>
+        <div className="mx-auto max-w-6xl px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+          <div className="af-animate text-center md:text-left">© {new Date().getFullYear()} Ashish Fitness. All rights reserved.</div>
+          <a className="af-animate af-animate-delay-sm hover:underline" href="#hero">Back to top</a>
         </div>
       </footer>
     </div>

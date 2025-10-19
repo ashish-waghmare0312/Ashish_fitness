@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <!-- Subtle dumbbell doodle tile. Keep very low opacity so it doesn't overpower. -->
+  <g opacity="0.08" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Dumbbell bar -->
+    <path d="M10 28h36"/>
+    <!-- Left plates -->
+    <rect x="6" y="22" width="4" height="12" rx="1.5"/>
+    <rect x="2.5" y="24" width="3" height="8" rx="1.2"/>
+    <!-- Right plates -->
+    <rect x="46" y="22" width="4" height="12" rx="1.5"/>
+    <rect x="50.5" y="24" width="3" height="8" rx="1.2"/>
+    <!-- Tiny accent line for doodle feel -->
+    <path d="M18 20c2-2 6-2 8 0"/>
+    <path d="M30 36c2 2 6 2 8 0"/>
+  </g>
+</svg>
+
