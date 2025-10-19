@@ -3,7 +3,14 @@ export const siteContent = {
     name: "Ashish Waghmare",
     logoText: "ashish waghmare",
     phone: "+919920926651",
+    email: "ashishfitnesscoaching@gmail.com",
     calendly: "https://calendly.com/ashishfitnesscoaching",
+    registrationForm: "https://docs.google.com/forms/d/1VzBb-Xz0s7N2Y4_cLsWE_45-xCvskGkL4a3GTlLSvX8/viewform?edit_requested=true",
+    social: {
+      instagram: "https://www.instagram.com/ashishwasfoundlifting/",
+      linkedin: "https://www.linkedin.com/in/ashishwaghmare/",
+      youtube: "https://www.youtube.com/@ashishwasfoundlifting",
+    },
   },
   hero: {
     headline: "Science-Backed Fitness & Nutrition for Students",

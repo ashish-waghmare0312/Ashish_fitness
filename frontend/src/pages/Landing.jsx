@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Instagram, Linkedin, Youtube, Mail, FileText } from "lucide-react";
 import TestimonialCard from "@/components/marketing/TestimonialCard";
 import TimelineDemo from "@/components/timelinedemo";
 import PillarsSection from "@/components/marketing/PillarsSection";
@@ -46,7 +46,7 @@ export default function Landing() {
   return (
     <div className="marketing">
       {/* Hero */}
-      <Section id="hero" padded={false} className="relative  pb-0 md:pt-24 md:pb-0 overflow-hidden">
+      <Section id="hero" padded={false} className="relative pb-0 md:pb-0 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-lime-200/30 to-transparent blur-3xl opacity-60 -translate-y-1/2 animate-pulse" aria-hidden />
@@ -54,12 +54,12 @@ export default function Landing() {
           <div className="absolute -bottom-40 left-1/2 w-96 h-96 rounded-full bg-gradient-to-t from-lime-100/20 to-transparent blur-3xl opacity-50 -translate-x-1/2" aria-hidden />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-8">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center min-h-[600px] md:min-h-[700px] py-12 md:py-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center min-h-[auto] md:min-h-[700px] py-8 md:py-12">
             {/* Left Content */}
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center text-center md:text-left">
               {/* Badge */}
-              <div className="af-animate mb-6 inline-flex w-fit">
+              <div className="af-animate mb-6 inline-flex w-fit mx-auto md:mx-0">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lime-50 border border-lime-200/60 text-xs font-semibold text-lime-900 uppercase tracking-wider">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-500 opacity-75"></span>
@@ -70,7 +70,7 @@ export default function Landing() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="af-animate af-animate-delay-sm text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight tracking-tight text-heading space-y-2 md:space-y-3">
+              <h1 className="af-animate af-animate-delay-sm text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight tracking-tight text-heading space-y-2 md:space-y-3">
                 <div>
                   Science-Backed{' '}
                   <span className="hero-highlight-word inline-block px-2 py-1 rounded-sm" style={{
@@ -83,14 +83,14 @@ export default function Landing() {
             </h1>
 
               {/* Subheadline */}
-              <p className="af-animate af-animate-delay-md text-lg md:text-xl text-body/90 max-w-md leading-relaxed mt-4 md:mt-6">
+              <p className="af-animate af-animate-delay-md text-base sm:text-lg md:text-xl text-body/90 max-w-md mx-auto md:mx-0 leading-relaxed mt-4 md:mt-6">
                 Transform your body without <span className="font-semibold text-heading">sacrificing your college life</span>. Real results, personalized plans, science-backed guidance.
               </p>
 
               {/* CTA Buttons */}
-              <div className="af-animate af-animate-delay-lg flex flex-col sm:flex-row gap-3 md:gap-4 items-start sm:items-center mt-8 md:mt-10">
+              <div className="af-animate af-animate-delay-lg flex flex-col sm:flex-row gap-3 md:gap-4 items-center sm:items-center md:items-start justify-center md:justify-start mt-8 md:mt-10">
               <Button
-                  className="btn-transition rounded-full af-btn-primary px-8 md:px-9 h-11 md:h-12 text-sm md:text-base font-semibold shadow-md hover:shadow-lg"
+                  className="btn-transition rounded-full af-btn-primary px-8 md:px-9 h-11 md:h-12 text-sm md:text-base font-semibold shadow-md hover:shadow-lg w-full sm:w-auto"
                 asChild
               >
                 <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" aria-label="Schedule a meeting on Calendly">
@@ -102,7 +102,7 @@ export default function Landing() {
                 href={waLink} 
                 target="_blank" 
                 rel="noreferrer" 
-                  className="btn-transition inline-flex items-center justify-center gap-2 px-7 md:px-8 h-11 md:h-12 rounded-full border-2 border-heading/30 hover:border-lime-400 hover:bg-lime-50 text-heading hover:text-lime-900 font-semibold text-sm md:text-base transition-all"
+                  className="btn-transition inline-flex items-center justify-center gap-2 px-7 md:px-8 h-11 md:h-12 rounded-full border-2 border-heading/30 hover:border-lime-400 hover:bg-lime-50 text-heading hover:text-lime-900 font-semibold text-sm md:text-base transition-all w-full sm:w-auto"
                 aria-label="Chat on WhatsApp"
               >
                   <img src={WhatsAppIcon} alt="WhatsApp" className="h-4 w-4 md:h-5 md:w-5" style={{ filter: 'brightness(0) saturate(1) hue-rotate(120deg)' }} aria-hidden />
@@ -111,15 +111,15 @@ export default function Landing() {
               </div>
 
               {/* Trust Element */}
-              <div className="af-animate af-animate-delay-lg mt-8 flex items-center gap-2 text-sm text-body/70">
-                <Check className="h-4 w-4 text-lime-600" aria-hidden />
+              <div className="af-animate af-animate-delay-lg mt-8 flex items-center justify-center md:justify-start gap-2 text-sm text-body/70">
+                <Check className="h-4 w-4 text-lime-600 flex-shrink-0" aria-hidden />
                 <span>No credit card required. Free consultation.</span>
               </div>
             </div>
 
             {/* Right Side - Stats/Achievement Card */}
-            <div className="af-animate af-animate-delay-md relative flex justify-center md:justify-end items-center">
-              <Card className="bg-gradient-to-br from-lime-50 via-white to-blue-50 border-2 border-lime-100/50 shadow-xl overflow-hidden w-full max-w-md">
+            <div className="af-animate af-animate-delay-md relative flex justify-center items-center mx-auto w-full md:w-auto">
+              <Card className="bg-gradient-to-br from-lime-50 via-white to-blue-50 border-2 border-lime-100/50 shadow-xl overflow-hidden w-full sm:w-[90%] md:w-full max-w-md">
                 <CardContent className="p-8 space-y-6">
                   {/* Quick Stats */}
                   <div className="space-y-4">
@@ -329,10 +329,10 @@ export default function Landing() {
           </div>
 
           {/* Contact Options */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* WhatsApp Card */}
             <Card className="af-animate bg-gradient-to-br from-lime-50/50 to-white border-2 border-lime-100/50 hover:border-lime-200 hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <div className="space-y-4">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lime-100">
                     <img src={WhatsAppIcon} alt="WhatsApp" className="h-6 w-6" style={{ filter: 'brightness(0) saturate(1) hue-rotate(120deg)' }} />
@@ -351,14 +351,35 @@ export default function Landing() {
               </CardContent>
             </Card>
 
+            {/* Registration Form Card */}
+            <Card className="af-animate af-animate-delay-sm bg-gradient-to-br from-blue-50/50 to-lime-50/50 border-2 border-blue-100/50 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 md:p-8">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
+                    <FileText className="h-6 w-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-heading mb-1">Register Now</h3>
+                    <p className="text-sm text-body/70">Fill out the intake form to get started with your personalized fitness journey.</p>
+                  </div>
+                  <a href={siteContent.brand.registrationForm} target="_blank" rel="noreferrer">
+                    <Button className="btn-transition w-full rounded-full af-btn-primary mt-4" title="Register">
+                      <FileText className="h-4 w-4 mr-2" /> 
+                      Complete Intake Form
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Contact Form Card */}
-            <Card className="af-animate af-animate-delay-sm bg-gradient-to-br from-blue-50/50 to-white border-2 border-blue-100/50 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-8">
+            <Card className="af-animate af-animate-delay-md bg-gradient-to-br from-blue-50/50 to-white border-2 border-blue-100/50 hover:border-blue-200 hover:shadow-lg transition-all duration-300 lg:col-span-1 md:col-span-2">
+              <CardContent className="p-6 md:p-8">
                 <form onSubmit={onSubmitContact} className="space-y-4">
                   <div>
                     <h3 className="text-lg font-bold text-heading mb-4">Send Me a Message</h3>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-semibold text-heading block mb-2">Name</label>
                       <Input name="name" placeholder="Your name" required className="rounded-lg" />
@@ -383,10 +404,81 @@ export default function Landing() {
         </div>
       </Section>
 
-      <footer className="py-10 af-footer">
-        <div className="mx-auto max-w-6xl px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-          <div className="af-animate text-center md:text-left">© {new Date().getFullYear()} Ashish Waghmare. All rights reserved.</div>
-          <a className="af-animate af-animate-delay-sm hover:underline" href="#hero">Back to top</a>
+      <footer className="py-12 md:py-16 bg-gradient-to-br from-lime-50 via-lime-100/50 to-lime-50 border-t border-lime-200">
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-8">
+            {/* Brand & About */}
+            <div className="text-center md:text-left">
+              <h3 className="text-lg font-bold text-heading mb-3">Ashish Waghmare</h3>
+              <p className="text-sm text-heading/70 leading-relaxed">
+                Science-backed fitness coaching for students. Transform your body without sacrificing your college life.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="text-center md:text-left">
+              <h3 className="text-sm font-bold text-heading uppercase tracking-wider mb-3">Quick Links</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#about" className="text-heading/70 hover:text-heading transition-colors font-medium">About</a></li>
+                <li><a href="#coaching" className="text-heading/70 hover:text-heading transition-colors font-medium">Coaching Plans</a></li>
+                <li><a href="#testimonials" className="text-heading/70 hover:text-heading transition-colors font-medium">Testimonials</a></li>
+                <li><a href="#contact" className="text-heading/70 hover:text-heading transition-colors font-medium">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Contact & Social */}
+            <div className="text-center md:text-left">
+              <h3 className="text-sm font-bold text-heading uppercase tracking-wider mb-3">Connect</h3>
+              <div className="space-y-3">
+                <a 
+                  href={`mailto:${siteContent.brand.email}`}
+                  className="flex items-center justify-center md:justify-start gap-2 text-sm text-heading/70 hover:text-heading transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  <span className="text-xs font-medium">{siteContent.brand.email}</span>
+                </a>
+                
+                {/* Social Links */}
+                <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
+                  <a 
+                    href={siteContent.brand.social.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/60 hover:bg-white text-heading hover:scale-110 transition-all shadow-sm"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                  <a 
+                    href={siteContent.brand.social.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/60 hover:bg-white text-heading hover:scale-110 transition-all shadow-sm"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                  <a 
+                    href={siteContent.brand.social.youtube}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/60 hover:bg-white text-heading hover:scale-110 transition-all shadow-sm"
+                    aria-label="YouTube"
+                  >
+                    <Youtube className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-lime-300/50 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-heading/70">
+            <div className="text-center md:text-left font-medium">
+              © {new Date().getFullYear()} Ashish Waghmare. All rights reserved.
+            </div>
+            <a className="hover:text-heading transition-colors font-semibold" href="#hero">Back to top ↑</a>
+          </div>
         </div>
       </footer>
     </div>
