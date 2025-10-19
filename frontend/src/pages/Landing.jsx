@@ -9,9 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Check, ArrowRight, MessageCircle, Dumbbell } from "lucide-react";
 import TestimonialCard from "@/components/marketing/TestimonialCard";
+import TimelineDemo from "@/components/timelinedemo";
+import PillarsSection from "@/components/marketing/PillarsSection";
 
 function Section({ id, children, className = "", padded = true, ...rest }) {
-  const classes = [padded ? "py-16 md:py-24" : "", className].filter(Boolean).join(" ");
+  const classes = [padded ? "py-24 md:py-32" : "", className].filter(Boolean).join(" ");
   return (
     <section id={id} className={classes} {...rest}>{children}</section>
   );
@@ -42,7 +44,7 @@ export default function Landing() {
   return (
     <div className="marketing">
       {/* Hero */}
-      <Section id="hero" className="dotted-bg" padded={false}>
+      <Section id="hero" padded={false} className="pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <div className="flex flex-col items-center text-center gap-4 md:gap-8">
             <h1 className="af-animate text-6xl md:text-[5.25rem] font-serif leading-tight tracking-tight text-heading">
@@ -78,7 +80,7 @@ export default function Landing() {
       </Section>
 
       {/* Know the Coach - unboxed */}
-      <Section id="about">
+      <Section id="about" padded>
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 items-center">
             <div className="order-2 md:order-1 about-photo-wrapper">
@@ -108,9 +110,9 @@ export default function Landing() {
       </Section>
 
       {/* Coaching */}
-      <Section id="coaching" className="" style={{background: "#FAFAFA"}}>
+      <Section id="coaching" className="" padded>
         <div className="mx-auto max-w-6xl px-6 md:px-8">
-          <div className="af-animate flex items-center justify-between mb-8">
+          <div className="af-animate flex items-center justify-between mb-12 border-b border-neutral-200 pb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-heading">{siteContent.coaching.title}</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -137,31 +139,22 @@ export default function Landing() {
         </div>
       </Section>
 
-      {/* Process - reverted to light cards */}
-      <Section id="process">
-        <div className="mx-auto max-w-5xl px-6 md:px-8">
-          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading">Process</h2>
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {["Assess", "Plan", "Execute"].map((step, i) => (
-              <Card key={step} className={`af-animate ${i === 1 ? "af-animate-delay-sm" : i === 2 ? "af-animate-delay-md" : ""} bg-white border af-border`}>
-                <CardHeader>
-                  <CardTitle className="text-heading">{i + 1}. {step}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-body">
-                  {step === "Assess" && "Quick audit of schedule, goals, and training access."}
-                  {step === "Plan" && "Personalized workouts + nutrition with milestones."}
-                  {step === "Execute" && "Weekly reviews, daily nudges (Premium), iterate."}
-                </CardContent>
-              </Card>
-            ))}
+      <PillarsSection />
+
+      {/* Process */}
+      <Section id="process" padded>
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-12 border-b border-neutral-200 pb-6">How I help you get your dream physique</h2>
+          <div className="af-animate af-animate-delay-sm">
+            <TimelineDemo />
           </div>
         </div>
       </Section>
 
       {/* Testimonials - card style */}
-      <Section id="testimonials">
+      <Section id="testimonials" padded>
         <div className="mx-auto max-w-5xl px-6 md:px-8">
-          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading">{siteContent.testimonials.title}</h2>
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-12 border-b border-neutral-200 pb-6">{siteContent.testimonials.title}</h2>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {siteContent.testimonials.items.map((t, idx) => (
               <div key={idx} className={`af-animate ${idx % 2 ? "af-animate-delay-sm" : ""}`}>
@@ -173,9 +166,9 @@ export default function Landing() {
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" style={{background: "#FAFAFA"}}>
+      <Section id="faq" padded>
         <div className="mx-auto max-w-3xl px-6 md:px-8">
-          <h2 className="af-animate text-2xl md:text-3xl font-bold mb-6 text-heading">{siteContent.faq.title}</h2>
+          <h2 className="af-animate text-2xl md:text-3xl font-bold text-center text-heading mb-8">{siteContent.faq.title}</h2>
           <Accordion type="single" collapsible className="w-full">
             {siteContent.faq.items.map((item, idx) => (
               <AccordionItem value={`q-${idx}`} key={idx} className="af-animate">
@@ -188,9 +181,9 @@ export default function Landing() {
       </Section>
 
       {/* Contact */}
-      <Section id="contact" style={{background: "#FAFAFA"}}>
+      <Section id="contact" padded>
         <div className="mx-auto max-w-4xl px-6 md:px-8">
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-3">
             <h2 className="af-animate text-2xl md:text-3xl font-bold text-heading">{siteContent.contact.title}</h2>
             <p className="af-animate af-animate-delay-sm text-body">{siteContent.contact.body}</p>
           </div>

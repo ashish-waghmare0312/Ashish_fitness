@@ -1,6 +1,6 @@
-import { Timeline } from "@/components/ui/timeline";
+import { Timeline } from "@/components/ui/timeline"
 
-export default function ProcessCards() {
+export default function TimelineDemo() {
   const data = [
     {
       title: "Step 1",
@@ -103,5 +103,11 @@ export default function ProcessCards() {
       ),
     },
   ]
-  return <Timeline data={data} />
+  return (
+    <div className="min-h-screen py-12 ">
+      <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-sm border border-neutral-200 p-8 md:p-12">
+        <Timeline data={data} />
+      </div>
+    </div>
+  )
 }
