@@ -93,7 +93,7 @@ export default function Landing() {
                   className="btn-transition rounded-full af-btn-primary px-8 md:px-9 h-11 md:h-12 text-sm md:text-base font-semibold shadow-md hover:shadow-lg w-full sm:w-auto"
                 asChild
               >
-                <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer" aria-label="Schedule a meeting on Calendly">
+                <a href={siteContent.brand.registrationForm} target="_blank" rel="noreferrer" aria-label="Start your fitness plan">
                   {siteContent.hero.cta}
                     <ArrowRight className="h-4 w-4 md:h-5 md:w-5 ml-1.5" aria-hidden />
                 </a>

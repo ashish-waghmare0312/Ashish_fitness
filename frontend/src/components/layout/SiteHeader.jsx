@@ -62,7 +62,7 @@ export default function SiteHeader() {
           </nav>
           <div className="site-header__cta">
             <Button className="btn-transition rounded-full af-btn-primary" asChild>
-              <a href={siteContent.brand.calendly} target="_blank" rel="noreferrer">Get In Touch</a>
+              <a href="#contact">Get In Touch</a>
             </Button>
           </div>
         </div>
@@ -117,9 +117,7 @@ export default function SiteHeader() {
           <div className="p-4 border-t border-neutral-200">
             <a 
               className="block w-full px-6 py-3 rounded-full bg-lime-400 hover:bg-lime-500 text-heading font-bold text-center transition-colors"
-              href={siteContent.brand.calendly} 
-              target="_blank" 
-              rel="noreferrer" 
+              href="#contact" 
               onClick={closeMobile}
             >
               Get In Touch
