@@ -41,7 +41,7 @@ export const Timeline = ({ data }) => {
             <div className="sticky top-40 z-40 flex max-w-xs items-center self-start md:max-w-sm md:w-full md:flex-row">
               <div className="absolute left-3 h-10 w-10 rounded-full bg-white md:left-3">
                 <div className="h-full w-full flex items-center justify-center">
-                  <div className="h-4 w-4 rounded-full border-2 border-lime-600 bg-lime-500" />
+                  <div className="h-4 w-4 rounded-full border-2 border-[#FDAA48] bg-[#FDAA48]/40" />
                 </div>
               </div>
               <h3 className="hidden text-xl font-bold text-blue-900 md:block md:pl-20 md:text-4xl">{item.title}</h3>
@@ -57,9 +57,9 @@ export const Timeline = ({ data }) => {
         <motion.div
           style={{
             height: heightTransform,
-            opacity: opacityTransform,
+            opacity: opacityTransform
           }}
-          className="absolute left-8 top-0 w-[4px] rounded-full bg-gradient-to-t from-lime-500 via-lime-400 to-transparent from-[0%] via-[10%] md:left-8"
+          className="absolute left-8 top-0 w-[4px] rounded-full bg-[#FDAA48] md:left-8"
         />
       </div>
     </div>

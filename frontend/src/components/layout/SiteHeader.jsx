@@ -61,7 +61,7 @@ export default function SiteHeader() {
             </NavigationMenu>
           </nav>
           <div className="site-header__cta">
-            <Button className="btn-transition rounded-full af-btn-primary" asChild>
+            <Button className="btn-transition rounded-full text-white font-bold bg-[#FDAA48]" asChild>
               <a href="#contact">Get In Touch</a>
             </Button>
           </div>
@@ -116,7 +116,7 @@ export default function SiteHeader() {
           {/* CTA Button */}
           <div className="p-4 border-t border-neutral-200">
             <a 
-              className="block w-full px-6 py-3 rounded-full bg-lime-400 hover:bg-lime-500 text-heading font-bold text-center transition-colors"
+              className="block w-full px-6 py-3 rounded-full bg-[#FDAA48] hover:bg-[#FDAA48] text-heading font-bold text-center transition-colors"
               href="#contact" 
               onClick={closeMobile}
             >

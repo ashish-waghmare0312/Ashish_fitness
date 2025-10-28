@@ -35,7 +35,7 @@ function highlightRelevant(text, highlights = []) {
   return parts.map((part, idx) => {
     const matched = cleaned.find((phrase) => phrase.toLowerCase() === part.toLowerCase());
     if (matched) {
-      return <mark key={`mark-${idx}`} className="af-mark">{part}</mark>;
+      return <mark key={`mark-${idx}`} className="bg-[#FDAA48]/40 rounded-md px-2">{part}</mark>;
     }
     return <span key={`span-${idx}`}>{part}</span>;
   });

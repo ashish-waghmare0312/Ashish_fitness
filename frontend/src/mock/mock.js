@@ -15,7 +15,7 @@ export const siteContent = {
   hero: {
     headline: "Science-Backed Fitness & Nutrition for Students",
     subheadline: "Stronger. Leaner. Healthier. Real results, no gimmicks.",
-    cta: "Start Your Plan",
+    cta: "Start Your Transformation",
     ctaHover: "Let's Go!",
     coach: {
       name: "Ashish",
@@ -28,7 +28,7 @@ export const siteContent = {
   about: {
     title: "About Ashish",
     body:
-      "Hi, I'm Ashish. I coach students with simple, science-backed workouts and meal plans that fit your busy schedule. No fads. No overcomplicated diets. Just real results.",
+      "Hi, I’m Ashish. I help people simplify fitness and nutrition so they can feel better, move better, and live better. No strict diets, no overcomplicated workouts — just science-backed routines that fit your lifestyle and goals.",
     highlight: "Certified Fitness & Nutrition Coach",
     credentials: [
       
