@@ -12,40 +12,40 @@ import {
 	Icon as LucideIcon, // Import Icon type for type safety
 } from "lucide-react";
 
-const PILLARS= [
+const PILLARS = [
 	{
 		icon: Dumbbell,
-		text: "Personalized workout programming...",
+		text: "Personalized workout programming backed by exercise science",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: Shield,
-		text: "Safe, efficient hypertrophy training...",
+		text: "Safe, efficient hypertrophy training using machines and cables",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: Apple,
-		text: "Nutrition plans built on macros...",
+		text: "Nutrition plans built on macros, flexibility, and real-world sustainability",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: TrendingUp,
-		text: "Weekly progress tracking...",
+		text: "Weekly progress tracking with RIR, performance, and body feedback",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: Video,
-		text: "Technique correction via video...",
+		text: "Technique correction through video form checks",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: Brain,
-		text: "Habit and mindset coaching...",
+		text: "Habit and mindset coaching focused on consistency and recovery",
 		colorClass: "af-bento-icon-lime",
 	},
 	{
 		icon: GraduationCap,
-		text: "Science-based education...",
+		text: "Science-based education — clear explanations behind every change",
 		colorClass: "af-bento-icon-lime",
 	},
 ];
@@ -64,7 +64,7 @@ const calculatePosition = (
 };
 
 export default function PillarsSectionCircular() {
-	const radius = 48; // Adjust radius (percentage of container width/height)
+	const radius = 40; // Adjust radius (percentage of container width/height)
 	const totalItems = PILLARS.length;
 
 	return (
@@ -83,12 +83,12 @@ export default function PillarsSectionCircular() {
 				</p>
 
 				{/* Circular Layout Container */}
-				<div className="relative w-full max-w-xl md:max-w-2xl aspect-square mx-auto">
+				<div className="relative w-full max-w-xl md:max-w-2xl aspect-square  mx-auto">
 					{" "}
 					{/* aspect-square keeps it circular */}
 					{/* Optional: Central Element */}
 					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center p-4">
-						<span className="text-4xl font-semibold text-blue-900 ">
+						<span className="text-2xl sm:text-4xl font-semibold text-blue-900 ">
 							Core Principles
 						</span>
 						{/* You could add a central icon here too */}
@@ -100,7 +100,7 @@ export default function PillarsSectionCircular() {
 						return (
 							<div
 								key={index}
-								className="absolute w-32 h-32 md:w-[14em] md:h-[8em] flex flex-col items-center justify-center text-center p-4 rounded-full bg-[#FDAA48]/10 border border-[#FDAA48] shadow-lg" // Item styling
+								className="absolute w-[7em] h-[7em] md:w-[13em] md:h-[12em] flex flex-col items-center justify-center text-center p-4 rounded-full bg-[#FDAA48]/10 border border-[#FDAA48] shadow-lg" // Item styling
 								style={{
 									top: `${y}%`,
 									left: `${x}%`,
@@ -112,15 +112,15 @@ export default function PillarsSectionCircular() {
 									{" "}
 									{/* Consistent color */}
 									<IconComponent
-										className="w-8 h-8 md:w-8 md:h-8 text-[#FDAA48]"
+										className="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 text-[#FDAA48]"
 										aria-hidden
 									/>
 								</div>
 								{/* Text */}
-								<span className="text-xs md:text-sm text-blue-900 leading-tight">
+								<span className="text-xs md:text-sm text-blue-900 w-[7em] h-[8em] sm:h-fit sm:w-fit  overflow-hidden sm:overflow-visible">
 									{" "}
 									{/* Adjusted text color */}
-									{item.text.split(" ").slice(0, 4).join(" ")}...{" "}
+									{item.text}
 									{/* Truncate text */}
 								</span>
 							</div>
