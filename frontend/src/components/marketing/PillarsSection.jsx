@@ -64,7 +64,7 @@ const calculatePosition = (
 };
 
 export default function PillarsSectionCircular() {
-	const radius = 40; // Adjust radius (percentage of container width/height)
+	const radius = 48; // Adjust radius (percentage of container width/height)
 	const totalItems = PILLARS.length;
 
 	return (
@@ -88,7 +88,7 @@ export default function PillarsSectionCircular() {
 					{/* aspect-square keeps it circular */}
 					{/* Optional: Central Element */}
 					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center p-4">
-						<span className="text-2xl font-semibold text-blue-900 ">
+						<span className="text-4xl font-semibold text-blue-900 ">
 							Core Principles
 						</span>
 						{/* You could add a central icon here too */}

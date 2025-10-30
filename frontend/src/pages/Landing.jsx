@@ -92,7 +92,8 @@ export default function Landing() {
 										}}>
 										Healthier,
 									</span>
-								Stronger You</div>
+									Stronger You
+								</div>
 							</h1>
 
 							{/* Subheadline */}
@@ -198,7 +199,7 @@ export default function Landing() {
 									<div className="bg-gradient-to-r from-[#FDAA48]/50 to-blue-100/50 rounded-lg p-5 border border-[#FDAA48]/50">
 										<div className="flex items-start gap-3">
 											<div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#FDAA48]0 flex items-center justify-center">
-												<Check className="h-6 w-6 text-white" />
+												<Check className="h-6 w-6 rounded-full p-1 border border-blue-900 bg-blue-900 text-white" />
 											</div>
 											<div>
 												<p className="text-sm font-semibold text-heading mb-1">
@@ -463,12 +464,12 @@ export default function Landing() {
 					</div>
 
 					{/* Contact Options */}
-					<div className="flex flex-col sm:flex-row justify-evenly gap-6 md:gap-8">
+					<div className="flex flex-col sm:flex-row justify-center gap-6 md:gap-12">
 						{/* WhatsApp Card */}
-						<Card className="af-animate bg-gradient-to-br from-[#FDAA48]/50 to-white border-2 border-[#FDAA48]/50 hover:border-[#FDAA48] hover:shadow-lg transition-all h-[20em] w-[15em] sm:w-[18em] flex flex-col justify-between duration-300">
+						<Card className="af-animate bg-[#FDAA48]/15 border-2 border-[#FDAA48]/50 hover:border-[#FDAA48] hover:shadow-lg transition-all h-[20em] w-[15em] sm:w-[18em] flex flex-col justify-between duration-300">
 							<CardContent className="p-6 md:p-8">
-								<div className="space-y-4">
-									<div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-lime-500">
+								<div className="space-y-4 flex flex-col items-center">
+									<div className="flex items-center justify-center w-12 h-12 rounded-full bg-lime-500">
 										<img
 											src={WhatsAppIcon}
 											alt="WhatsApp"
@@ -480,10 +481,10 @@ export default function Landing() {
 										/>
 									</div>
 									<div>
-										<h3 className="text-lg font-bold text-heading mb-1">
+										<h3 className="text-lg text-center font-bold text-heading mb-1">
 											Quick Chat
 										</h3>
-										<p className="text-sm text-body/70">
+										<p className="text-sm text-center text-body/70">
 											Get instant replies on WhatsApp. Perfect for quick
 											questions or to book your consultation.
 										</p>
@@ -497,7 +498,7 @@ export default function Landing() {
 									target="_blank"
 									rel="noreferrer">
 									<Button
-										className="btn-transition w-full rounded-full af-btn-primary mt-4"
+										className="btn-transition w-full bg-[#FDAA48] font-semibold rounded-full mt-4"
 										title="Chat with Ashish">
 										<img
 											src={WhatsAppIcon}
@@ -512,17 +513,17 @@ export default function Landing() {
 						</Card>
 
 						{/* Registration Form Card */}
-						<Card className="af-animate af-animate-delay-sm bg-gradient-to-br from-blue-50/50 to-[#FDAA48]/50  h-[20em] w-[15em] sm:w-[18em] border-2 border-[#FDAA48]/50 hover:border-[#FDAA48] hover:shadow-lg flex flex-col justify-between transition-all duration-300">
+						<Card className="af-animate af-animate-delay-sm bg-[#FDAA48]/15 h-[20em] w-[15em] sm:w-[18em] border-2 border-[#FDAA48]/50 hover:border-[#FDAA48] hover:shadow-lg flex flex-col justify-between transition-all duration-300">
 							<CardContent className="p-6 md:p-8">
-								<div className="space-y-4">
+								<div className="space-y-4 flex flex-col items-center">
 									<div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
 										<FileText className="h-6 w-6 text-blue-700" />
 									</div>
 									<div>
-										<h3 className="text-lg font-bold text-heading mb-1">
+										<h3 className="text-lg font-bold text-center text-heading mb-1">
 											Register Now
 										</h3>
-										<p className="text-sm text-body/70">
+										<p className="text-sm text-center text-body/70">
 											Fill out the intake form to get started with your
 											personalized fitness journey.
 										</p>
@@ -536,7 +537,7 @@ export default function Landing() {
 									rel="noreferrer"
 									className="w-full">
 									<Button
-										className="btn-transition w-full rounded-full af-btn-primary mt-4"
+										className="btn-transition  font-semibold w-full rounded-full bg-[#FDAA48] mt-4"
 										title="Register">
 										<FileText className="h-4 w-4 mr-2" />
 										Complete Intake Form
