@@ -341,7 +341,7 @@
 }
 
 #hero h1 {
-  background: linear-gradient(135deg, var(--af-blue) 0%, var(--af-blue-2) 50%, var(--af-lime-dark) 100%);
+  background: linear-gradient(135deg, var(--af-blue) 0%, var(--af-blue-2) 50%, #FDAA48 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
