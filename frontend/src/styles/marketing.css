@@ -727,3 +727,120 @@
 .hero-highlight-word {
   box-shadow: inset 0 -2px 0 rgba(205,220,57,0.45);
 }
+
+/* Smooth continuous scrolling for testimonials */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  will-change: transform;
+}
+
+.smooth-scroll * {
+  transition: transform 0.016s linear;
+}
+
+/* Testimonial marquee & card refinements */
+.testimonial-marquee-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 80rem);
+  overflow: hidden;
+  padding-block: 0.75rem;
+}
+
+.testimonial-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-marquee__track {
+  display: flex;
+  gap: 1.25rem;
+  padding-inline: 0.75rem;
+  min-width: max-content;
+  margin-inline: auto;
+  animation-duration: var(--marquee-duration, 30s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: testimonial-marquee-left;
+}
+
+.testimonial-marquee--ltr .testimonial-marquee__track {
+  animation-name: testimonial-marquee-right;
+}
+
+.testimonial-marquee__item {
+  flex: 0 0 auto;
+  width: clamp(260px, 22vw, 360px);
+  display: flex;
+}
+
+@keyframes testimonial-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes testimonial-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.testimonial-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(16px, 3vw, 48px);
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: normal;
+}
+
+.testimonial-edge-left {
+  left: 0;
+  background: linear-gradient(90deg, var(--af-bg, #ffffff) 8%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(5px);
+}
+
+.testimonial-edge-right {
+  right: 0;
+  background: linear-gradient(270deg, var(--af-bg, #ffffff) 8%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(5px);
+}
+
+.testimonial-card {
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  padding-block: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-marquee-wrapper {
+    width: min(96vw, 70rem);
+  }
+
+  .testimonial-marquee__item {
+    width: clamp(240px, 30vw, 320px);
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial-marquee-wrapper {
+    width: min(94vw, 56rem);
+  }
+
+  .testimonial-marquee__item {
+    width: clamp(220px, 78vw, 280px);
+  }
+
+  .testimonial-card {
+    min-height: 220px;
+  }
+}

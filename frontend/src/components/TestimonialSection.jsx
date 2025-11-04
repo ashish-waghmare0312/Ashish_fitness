@@ -1,46 +1,78 @@
-import React from 'react'
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import React, { useMemo } from 'react'
 import TestimonialCard from './marketing/TestimonialCard';
-import Autoplay from "embla-carousel-autoplay";
 
-const TestimonialSection = ({siteContent}) => {
+const DEFAULT_DURATIONS = [28, 34];
+
+const TestimonialSection = ({ siteContent = {} }) => {
+  const testimonials = siteContent?.testimonials?.items ?? [];
+
+  if (!testimonials.length) {
+    return null;
+  }
+
+  const durations = useMemo(() => {
+    const configured = siteContent?.testimonials?.marqueeDurations;
+
+    if (Array.isArray(configured) && configured.length) {
+      return [
+        configured[0] ?? DEFAULT_DURATIONS[0],
+        configured[1] ?? configured[0] ?? DEFAULT_DURATIONS[1],
+      ];
+    }
+
+    const speed = siteContent?.testimonials?.speed;
+
+    if (typeof speed === 'number' && Number.isFinite(speed)) {
+      return [speed, Math.max(speed * 1.15, speed + 4)];
+    }
+
+    return DEFAULT_DURATIONS;
+  }, [siteContent]);
+
+  const rows = useMemo(() => [
+    { id: 'testimonial-row-primary', direction: 'rtl', duration: durations[0] },
+    { id: 'testimonial-row-secondary', direction: 'ltr', duration: durations[1] ?? durations[0] },
+  ], [durations]);
+
+  const loopedTestimonials = useMemo(() => {
+    if (!testimonials.length) {
+      return [];
+    }
+
+    return [...testimonials, ...testimonials, ...testimonials];
+  }, [testimonials]);
+
   return (
-		<div className="mt-10">
-			<Carousel
-				opts={{
-					align: "start",
-					loop: true, // Infinitely loop the carousel
-				}}
-				plugins={[
-					Autoplay({
-						delay: 2000, // Time (in ms) before auto-scrolling to next item
-						stopOnInteraction: false, // Don't stop when user interacts
-						stopOnMouseEnter: true, // Pause when user hovers over the carousel
-						direction: "backward", // This sets the scroll direction to right-to-left
-					}),
-				]}
-				// Adjust width as needed, and add overflow-hidden
-				className="w-full max-w-5xl mx-auto overflow-hidden">
-				<CarouselContent className="-ml-6">
-					{siteContent.testimonials.items.map((t, idx) => (
-						<CarouselItem
-							key={idx}
-							className="pl-6 md:basis-1/2 lg:basis-1/3">
-							{/* p-1 is often used for outline/focus styles, h-full helps align cards */}
-							<div className="p-1 h-full">
-								<TestimonialCard
-									author={t.author}
-									text={t.text}
-									highlights={t.highlights}
-								/>
-							</div>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				{/* We can omit <CarouselPrevious /> and <CarouselNext /> for a clean, automatic-only look */}
-			</Carousel>
-		</div>
-	);
+    <section className="relative mt-16 w-full max-w-7xl px-4 sm:px-6 mx-auto">
+      <div className="testimonial-marquee-wrapper mx-auto">
+        <div className="testimonial-edge testimonial-edge-left" aria-hidden="true" />
+        <div className="testimonial-edge testimonial-edge-right" aria-hidden="true" />
+
+        <div className="flex flex-col gap-10">
+          {rows.map(({ id, direction, duration }) => (
+            <div
+              key={id}
+              className={`testimonial-marquee testimonial-marquee--${direction}`}
+              style={{ '--marquee-duration': `${duration}s` }}
+            >
+              <div className="testimonial-marquee__track">
+                {loopedTestimonials.map((t, idx) => (
+                  <div key={`${id}-${idx}`} className="testimonial-marquee__item">
+                    <TestimonialCard
+                      author={t.author}
+                      text={t.text}
+                      highlights={t.highlights}
+                      className="h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default TestimonialSection

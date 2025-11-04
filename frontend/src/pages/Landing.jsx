@@ -7,8 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Check, ArrowRight, Instagram, Linkedin, Youtube, Mail, FileText } from "lucide-react";
-import TestimonialCard from "@/components/marketing/TestimonialCard";
+import { Check, ArrowRight,  Mail, FileText, Instagram, Linkedin, Youtube } from "lucide-react";
 import TimelineDemo from "@/components/timelinedemo";
 import PillarsSection from "@/components/marketing/PillarsSection";
 import WhatsAppIcon from "@/assets/whatsapp-svgrepo-com.svg";
