@@ -12,6 +12,7 @@ import TestimonialCard from "@/components/marketing/TestimonialCard";
 import TimelineDemo from "@/components/timelinedemo";
 import PillarsSection from "@/components/marketing/PillarsSection";
 import WhatsAppIcon from "@/assets/whatsapp-svgrepo-com.svg";
+import TestimonialSection from "@/components/TestimonialSection";
 
 function Section({ id, children, className = "", padded = true, ...rest }) {
   const classes = [padded ? "py-24 md:py-32" : "", className].filter(Boolean).join(" ");
@@ -203,7 +204,7 @@ export default function Landing() {
 											</div>
 											<div>
 												<p className="text-sm font-semibold text-heading mb-1">
-													Student-Focused Approach
+													Designed Around Your Time
 												</p>
 												<p className="text-xs text-body/70">
 													Plans designed specifically for college students
@@ -263,8 +264,8 @@ export default function Landing() {
 								/>
 
 								{/* Badge at bottom left */}
-								<div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur border border-[#FDAA48] rounded-lg px-3.5 py-2.5 shadow-lg z-10">
-									<div className="text-sm font-bold text-heading">
+								<div className="absolute bottom-4 left-4 bg-white/0 backdrop-blur-[4px] rounded-lg px-3.5 py-2.5 shadow-lg z-10">
+									<div style={{color:"green"}} className="text-sm font-bold text-heading">
 										Ashish
 									</div>
 									<div className="text-xs font-semibold text-[#FDAA48]">
@@ -408,21 +409,7 @@ export default function Landing() {
 							professionals
 						</p>
 					</div>
-					<div className="mt-10 grid md:grid-cols-2 gap-6">
-						{siteContent.testimonials.items.map((t, idx) => (
-							<div
-								key={idx}
-								className={`af-animate ${
-									idx % 2 ? "af-animate-delay-sm" : ""
-								}`}>
-								<TestimonialCard
-									author={t.author}
-									text={t.text}
-									highlights={t.highlights}
-								/>
-							</div>
-						))}
-					</div>
+					<TestimonialSection siteContent={siteContent} />
 				</div>
 			</Section>
 
@@ -464,7 +451,7 @@ export default function Landing() {
 					</div>
 
 					{/* Contact Options */}
-					<div className="flex flex-col sm:flex-row justify-center gap-6 md:gap-12">
+					<div className="flex flex-col items-center sm:flex-row justify-center gap-6 md:gap-12">
 						{/* WhatsApp Card */}
 						<Card className="af-animate bg-[#FDAA48]/15 border-2 border-[#FDAA48]/50 hover:border-[#FDAA48] hover:shadow-lg transition-all h-[20em] w-[15em] sm:w-[18em] flex flex-col justify-between duration-300">
 							<CardContent className="p-6 md:p-8">
