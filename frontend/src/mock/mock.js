@@ -50,7 +50,7 @@ export const siteContent = {
         ],
       },
       {
-        name: "Group Grind – 3-Person Group",
+        name: "Training Group – 3-Person Group",
         details: [
           "Plans for students",
           "Weekly progress check-ins",
@@ -58,12 +58,7 @@ export const siteContent = {
         ],
       },
       {
-        name: "Premium Hybrid – In-Person + Online",
-        details: [
-          "In-person sessions + video calls",
-          "Daily check-ins",
-          "Personalized nutrition",
-        ],
+        
       },
     ],
   },
