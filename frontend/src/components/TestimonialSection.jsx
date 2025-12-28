@@ -1,4 +1,4 @@
-console.log("NEW MANUAL TESTIMONIAL COMPONENT LOADED");
+
 
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
