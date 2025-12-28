@@ -349,7 +349,7 @@ export default function Landing() {
 								</CardHeader>
 								<CardContent>
 									<ul className="space-y-2">
-										{pkg.details.map((d) => (
+										{pkg.details?.map((d) => (
 											<li
 												key={d}
 												className="flex items-start gap-2 text-sm text-body">
