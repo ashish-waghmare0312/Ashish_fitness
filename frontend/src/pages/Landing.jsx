@@ -332,7 +332,7 @@ export default function Landing() {
 						</h2>
 					</div>
 					<div className="grid md:grid-cols-3 gap-6">
-						{siteContent.coaching.packages.map((pkg, idx) => (
+						{siteContent.coaching.packages?.map((pkg, idx) => (
 							<Card
 								key={pkg.name}
 								className={`af-animate ${
