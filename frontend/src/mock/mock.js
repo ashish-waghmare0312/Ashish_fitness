@@ -57,9 +57,7 @@ export const siteContent = {
           "Community motivation",
         ],
       },
-      {
-        
-      },
+      
     ],
   },
   testimonials: {
