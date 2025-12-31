@@ -29,7 +29,7 @@ export const siteContent = {
     title: "About Ashish",
     body:
       "Hi, I’m Ashish. I help people simplify fitness and nutrition so they can feel better, move better, and live better. No strict diets, no overcomplicated workouts — just science-backed routines that fit your lifestyle and goals.",
-    highlight: "Certified Fitness & Nutrition Coach",
+    highlight: "Fitness & Nutrition Coach",
     credentials: [
       
       "Trained under NASM-CNC",
@@ -43,18 +43,18 @@ export const siteContent = {
     ctaHover: "Start now",
     packages: [
       {
-        name: "Starter Plan – Online 1-on-1",
+        name: "Starter/Student Plan – Online 1-on-1",
         details: [
           "Personalized workouts & nutrition",
           "Weekly check-ins",
         ],
       },
       {
-        name: "Training Group – 3-Person Group",
+        name: "Advanced Plan For Busy Professionals",
         details: [
-          "Plans for students",
-          "Weekly progress check-ins",
-          "Community motivation",
+          "Everything above",
+          "Weekly video call",
+          "Lifestyle guidance around sleep and stress",
         ],
       },
       
