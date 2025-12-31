@@ -89,6 +89,14 @@ export const siteContent = {
         ],
       },
       {
+        author: "Ayaan (College Studnet)",
+        text:
+          "Over the past few months, Ashish has genuinely changed the way I approach fitness. Between the customized workouts and constant motivation, I’ve been able to lose weight in a way that feels sustainable.It’s not just a temporary fix; it’s a lifestyle change. If this is the level of dedication provided now, I can confidently say that any future clients are in amazing hands!”",
+        highlights: [
+          "I can confidently say that any future clients are in amazing hands!",
+        ],
+      },
+      {
         author: "Shreeya (Working Professional)",
         text:
           "Since starting with Ashish in mid-May, and over the course of about 2.5 to 3 months, I've achieved a significant milestone! Despite being a working professional and having to battle frustrating weight fluctuations, I've successfully dropped 5 kgs in total. I started at 74.5 kgs and am now at 69.5 kgs. Ashish's consistent guidance has been key to overcoming those hurdles and achieving this great result. Big Ws, indeed!”",
