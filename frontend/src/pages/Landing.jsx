@@ -471,7 +471,7 @@ export default function Landing() {
 											Quick Chat
 										</h3>
 										<p className="text-sm text-center text-body/70">
-											Get instant replies on WhatsApp. Perfect for quick
+											Perfect for quick
 											questions or to book your consultation.
 										</p>
 									</div>
