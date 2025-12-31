@@ -52,8 +52,8 @@ export const siteContent = {
       {
         name: "Advanced Plan For Busy Professionals",
         details: [
-          "Everything above along with weekly Video check-ins",
-          "For people with a busier schedule than usual",
+          "Includes weekly video check-ins"
+          "Perfect for busy schedules",
           ],
       },
     ],
