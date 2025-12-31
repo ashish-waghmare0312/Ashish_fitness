@@ -544,8 +544,8 @@ export default function Landing() {
 								Ashish Waghmare
 							</h3>
 							<p className="text-sm text-heading/70 leading-relaxed">
-								Science-backed fitness coaching for students. Transform
-								your body without sacrificing your college life.
+								Science-backed fitness coaching for students and busy profressionals. Transform
+								your body with the right knowledge and guidance.
 							</p>
 						</div>
 
