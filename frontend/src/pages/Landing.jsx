@@ -206,8 +206,8 @@ export default function Landing() {
 													Designed Around Your Time
 												</p>
 												<p className="text-xs text-body/70">
-													Plans designed specifically for college students
-													juggling studies, social life, and fitness goals.
+													Plans designed specifically for busy professionals
+													and college students needing a system.
 												</p>
 											</div>
 										</div>
