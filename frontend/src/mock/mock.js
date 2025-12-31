@@ -54,8 +54,7 @@ export const siteContent = {
         details: [
           "Everything above",
           "Weekly video call",
-          "Lifestyle guidance around sleep and stress",
-        ],
+          ],
       },
     ],
   },
