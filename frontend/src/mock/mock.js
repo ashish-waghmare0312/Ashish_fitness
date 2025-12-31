@@ -33,8 +33,8 @@ export const siteContent = {
     credentials: [
       
       "Trained under NASM-CNC",
-      "Pursuing Nutrition Coaching Certification",
-      "Specialized in student fitness & lifestyle",
+      "Pursuing Nutrition Coaching and Personal Trainining Certifications",
+      "Specialized in nutritrion education and hypertrophy programming",
     ],
   },
   coaching: {
