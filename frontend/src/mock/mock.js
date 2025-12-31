@@ -28,7 +28,7 @@ export const siteContent = {
   about: {
     title: "About Ashish",
     body:
-      "Hi, I’m Ashish. I help people simplify fitness and nutrition so they can feel better, move better, and live better. No strict diets, no overcomplicated workouts — just science-backed routines that fit your lifestyle and goals.",
+      "Hi, I’m Ashish. I help people simplify fitness and nutrition so they can feel better, move better, and live better. No strict diets, no overcomplicated workouts, just science-backed routines that fit your lifestyle and goals.",
     highlight: "Fitness & Nutrition Coach",
     credentials: [
       
@@ -52,8 +52,8 @@ export const siteContent = {
       {
         name: "Advanced Plan For Busy Professionals",
         details: [
-          "Everything above",
-          "Weekly video call",
+          "Everything above along with weekly Video check-ins",
+          "For people with a busier schedule than usual",
           ],
       },
     ],
