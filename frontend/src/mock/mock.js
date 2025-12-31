@@ -57,7 +57,6 @@ export const siteContent = {
           "Lifestyle guidance around sleep and stress",
         ],
       },
-      
     ],
   },
   testimonials: {
